@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Rock Paper Scissors</title>
+    <link href="style/default.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body style="overflow: hidden">
+    <header>
+        <h1>Rock Paper Scissors Lizard Spock</h1>
+        <p id="action-message">Make your move.</p>
+    </header>
+
+    <div class="score-board">
+        <div id="user-label" class="badge">USER</div>
+        <div id="computer-label" class="badge">COMP</div>
+        <div id="timer-label" class="badge">Timer : <span id="timer">00:20</span></div>
+        <span id="user-score">0</span> : <span id="computer-score">0</span>
+        
+    </div>
+
+    <div class="result">
+        <p>Welcome to Adv. RockPaperScissor Gamez.</p>
+    </div>
+
+    <div id="change-sc-size">
+        <img src="img/rock.png" alt="" id="r" class="circle default-r">
+        <img src="img/paper.png" alt="" id="p"class="circle default-p">
+        <img src="img/scissor.png" alt="" id="s"class="circle default-s">
+        <img src="img/lizard.png" alt="" id="l" class="circle default-l">
+        <img src="img/spock.png" alt="" id="spo" class="circle default-spo" disabled="true">
+    </div>
+    
+    <button id="restartBtn" onclick="resetGame()">Restart Game</button>
+
+
+    <script src="js/script.js"></script>
+    <script src="vendor/jquery.cookie/jquery.cookie.js"> </script>
+    <script>
+        $(window).resize(function() {
+            if (document.documentElement.clientWidth < 1000) {    
+                $('img#r').addClass('change-r');
+                $('img#p').addClass('change-p');
+                $('img#s').addClass('change-s');
+                $('img#l').addClass('change-l');
+                $('img#spo').addClass('change-spo');
+                $('div#change-sc-size').addClass('circle-wrapper');
+
+                
+            } else {
+                $('img#r').removeClass('change-r');
+                $('img#p').removeClass('change-p');
+                $('img#s').removeClass('change-s');
+                $('img#l').removeClass('change-l');
+                $('img#spo').removeClass('change-spo');
+                $('div#change-sc-size').removeClass('circle-wrapper');
+            }
+
+        }).resize()
+    </script>
+</body>
+
+</html>
